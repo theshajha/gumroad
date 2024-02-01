@@ -57,22 +57,21 @@ def random_currency_code
   ["USD", "EUR", "GBP", "INR", "CAD"].sample
 end
 
-# Generate 100 products
 100.times do
-  Product.create(
-    name: Faker::Commerce.product_name, # Using Faker gem to generate product names
-    permalink: Faker::Internet.slug,
-    creator_name: Faker::Name.name,
-    creator_profile_url: Faker::Internet.url,
-    ratings_count: random_ratings_count,
-    ratings_average: random_ratings_average,
-    price: random_price,
-    currency_code: random_currency_code,
-    thumbnail_url: Faker::Internet.url,
-    is_pay_what_you_want: [true, false].sample,
-    main_cover_id: SecureRandom.hex(10),
-    category: Category.all.sample # Randomly assign a category
-  )
+  permalink = Faker::Internet.slug
+  Product.find_or_create_by(permalink: permalink) do |product|
+    product.name = Faker::Commerce.product_name
+    product.creator_name = Faker::Name.name
+    product.creator_profile_url = Faker::Internet.url
+    product.ratings_count = random_ratings_count
+    product.ratings_average = random_ratings_average
+    product.price = random_price
+    product.currency_code = random_currency_code
+    product.thumbnail_url = "https://public-files.gumroad.com/ba6pmzf1c8hgtfbicpnpqq7siyb6"
+    product.is_pay_what_you_want = [true, false].sample
+    product.main_cover_id = SecureRandom.hex(10)
+    product.category = Category.all.sample
+  end
 end
 
 puts "100 products seeded."

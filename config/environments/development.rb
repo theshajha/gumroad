@@ -54,5 +54,9 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::FileUpdateChecker
 
   # Allow hosting on *.repl.co hosts
+  config.hosts << "14daee96-be81-4417-8bb0-66e796dd588f-00-2xqfzqyvqmeu9.picard.replit.dev"
+  config.hosts << "gumroad.replit.app"
+  config.hosts << /.*\.replit.app/
   config.hosts << /.*\.repl.co/
+  config.hosts << /.*\.picard.repl.dev/
 end

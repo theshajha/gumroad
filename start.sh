@@ -26,6 +26,12 @@ mv -f build/* ../public/
 # Navigate back to the root directory
 cd ..
 
+echo "Checking and applying database migrations..."
+# bundle exec rake db:migrate
+
+echo "Seeding the database..."
+# bundle exec rake db:seed
+
 # Start the Rails server
 echo "Starting Rails server..."
-bundle exec rails s
+bundle exec rails s --binding=0.0.0.0 -p 5000

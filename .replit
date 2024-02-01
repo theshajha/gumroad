@@ -1,0 +1,31 @@
+run = "chmod +x start.sh && ./start.sh"
+hidden = [".bundle"]
+entrypoint = "main.rb"
+
+[env]
+PATH = "$REPL_HOME/.local/share/gem/ruby/3.3.0/bin"
+
+[nix]
+channel = "stable-23_11"
+
+[packager]
+language = "ruby"
+
+[packager.features]
+packageSearch = true
+guessImports = true
+
+[gitHubImport]
+requiredFiles = [".replit", "replit.nix", "README.md"]
+
+[languages]
+
+[languages.ruby]
+pattern = "**/*.rb"
+
+[languages.ruby.languageServer]
+start = "solargraph stdio"
+
+[deployment]
+deploymentTarget = "cloudrun"
+run = ["sh", "-c", "chmod +x start.sh && ./start.sh"]
