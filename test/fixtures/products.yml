@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  permalink: MyString
+  creator_name: MyString
+  creator_profile_url: MyString
+  ratings_count: 1
+  ratings_average: 9.99
+  price: MyString
+  currency_code: MyString
+  thumbnail_url: MyString
+  is_pay_what_you_want: false
+  main_cover_id: MyString
+  category: one
+
+two:
+  name: MyString
+  permalink: MyString
+  creator_name: MyString
+  creator_profile_url: MyString
+  ratings_count: 1
+  ratings_average: 9.99
+  price: MyString
+  currency_code: MyString
+  thumbnail_url: MyString
+  is_pay_what_you_want: false
+  main_cover_id: MyString
+  category: two
