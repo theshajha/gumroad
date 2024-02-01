@@ -1,7 +1,7 @@
 {
-  "name": "stigma",
+  "name": "gumroad",
   "version": "1.0.0",
-  "description": "A boilerplate project for anyone interested in making a project that uses React and Rails.",
+  "description": "Product Engineering Challenge",
   "main": "index.js",
   "directories": {
     "lib": "lib",
@@ -15,15 +15,6 @@
     "deploy": "cp -a client/build/. public/",
     "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/NimaBoscarino/stigma.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/NimaBoscarino/stigma/issues"
-  },
-  "homepage": "https://github.com/NimaBoscarino/stigma#readme"
+
+  "keywords": []
 }
