@@ -3,7 +3,7 @@ module Api
     # GET /api/categories
     def index
       categories = if params[:keyword].present?
-                     Category.where("name LIKE :keyword OR description LIKE :keyword OR slug LIKE :keyword", keyword: "%#{params[:keyword]}%")
+                     Category.where("name LIKE :keyword OR description LIKE :keyword OR slug LIKE :keyword", keyword: "%#{params[:keyword]}%").page(params[:page]).per(3)
                    else
                      Category.all
                    end

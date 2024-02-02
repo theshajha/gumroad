@@ -1,10 +1,9 @@
 import React from 'react'
-import { ListingsType } from '../../../constants/dummyData/listing'
 import clsx from 'clsx'
+import { ProductTypes } from '../../../recoil/apiRecoilState.types'
 
-const ListingCard = (props: { listing: ListingsType }) => {
-    const { listing } = props
-    console.log(listing)
+const ListingCard = (props: { product: ProductTypes }) => {
+    const { product } = props
     const {
         id,
         name,
@@ -19,7 +18,7 @@ const ListingCard = (props: { listing: ListingsType }) => {
         is_pay_what_you_want,
         category_id,
         formatted_price,
-    } = listing
+    } = product
     return (
         <div className="relative">
             <div className="absolute z-0 bottom-0 right-0 top-0 left-0 bg-white rounded"></div>
@@ -42,7 +41,7 @@ const ListingCard = (props: { listing: ListingsType }) => {
                                 }}
                             />
                             <div className="text-white font-[mabry pro] text-sm leading-[normal] underline">
-                                Shashank Jha
+                                {creator_name}
                             </div>
                         </div>
                         <div className="flex items-center gap-2.5 self-stretch">
@@ -78,7 +77,7 @@ const ListingCard = (props: { listing: ListingsType }) => {
                         <path d="M0 0H54L40.5 13L54 24H0V0Z" fill="#FF8FE7" />
                     </svg>
                     <div className="text-black font-[mabry pro] text-sm leading-[normal] z-10 ml-1">
-                        $25
+                        $ {price.split('.')[0]}
                     </div>
                 </div>
             </div>

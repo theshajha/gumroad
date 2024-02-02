@@ -74,7 +74,7 @@ gumroad_redesign/
 
 ### What more could be done
 - Mobile responsiveness
-- Data abtraction and how it gets accessed by the react app can be optimised further
+- Data abstraction and how it gets accessed by the react app can be optimised further
 - Search implementation is pretty basic to showcase UI possibility
 
 ## Installation, Setup and Running this project

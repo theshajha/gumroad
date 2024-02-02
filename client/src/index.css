@@ -22,3 +22,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.loader {
+  border: 2px dashed #fff;
+  /* Adjust border size and color as needed */
+  border-radius: 50%;
+  border-top: 4px dashed transparent;
+  /* Hide the top border to create a dashed effect */
+  width: 32px;
+  /* Adjust width and height as needed */
+  height: 32px;
+  animation: spin 1s linear infinite;
+  /* Rotate the loader infinitely */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

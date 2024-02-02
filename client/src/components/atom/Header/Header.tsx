@@ -11,6 +11,7 @@ const Header = () => {
     }
     const handleChange = (event: any) => {
         !isSearchOpen && setIsSearchOpen(true)
+        if (!event.target.value) setIsSearchOpen(false)
         event.preventDefault()
         setSearchInput(event.target.value)
     }
@@ -66,6 +67,7 @@ const Header = () => {
             <SearchComponent
                 isOpen={isSearchOpen}
                 onClose={handleCloseSearch}
+                searchInput={searchInput}
             />
         </div>
     )

@@ -1,35 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.023d4ba4.css",
-    "main.js": "/static/js/main.6f711cce.js",
+    "main.css": "/static/css/main.5cf88970.css",
+    "main.js": "/static/js/main.6e1ea2d2.js",
     "static/js/787.94c48ac3.chunk.js": "/static/js/787.94c48ac3.chunk.js",
-    "static/media/films.svg": "/static/media/films.b1233467ef53c8bf8041d48685b1e920.svg",
-    "static/media/3d.svg": "/static/media/3d.004e5e5f6951c0b00d71afb4308641f1.svg",
-    "static/media/fiction-books.svg": "/static/media/fiction-books.6dcf11481571d3261fb074089cc9ea79.svg",
-    "static/media/writing-publishing.svg": "/static/media/writing-publishing.ea6e8b4205c8644f1676d703211a1a3f.svg",
-    "static/media/gaming.svg": "/static/media/gaming.0d758cbbc9408e214863ef5d1ecedbb1.svg",
-    "static/media/audio.svg": "/static/media/audio.cf51037c8310ebd9011d0403a3a7e3f6.svg",
-    "static/media/drawing-painting.svg": "/static/media/drawing-painting.02f4f6ad890afb0d686a2e9712162699.svg",
-    "static/media/comic-graphics.svg": "/static/media/comic-graphics.664571a6ef119d29254e815bd868a0ae.svg",
-    "static/media/software-development.svg": "/static/media/software-development.f4100aa654a10b52a9d115d427c13f04.svg",
-    "static/media/business-money.svg": "/static/media/business-money.6a35c5f47cf98f0d327aa1fa156c9308.svg",
-    "static/media/design.svg": "/static/media/design.1e10d4d54fc4337fbdf5e647e22e464b.svg",
-    "static/media/fitness-health.svg": "/static/media/fitness-health.25ecd0683e0fc4b587cb466a3b24c947.svg",
-    "static/media/recorded-music.svg": "/static/media/recorded-music.8cab1a19341ccd48f0ed819e09783bd1.svg",
-    "static/media/music-sound-design.svg": "/static/media/music-sound-design.d78ec041726fd2df6a4ead50d67a55d5.svg",
-    "static/media/photography.svg": "/static/media/photography.8180e7039f2aab82283ff97e89f0b034.svg",
-    "static/media/self-improvement.svg": "/static/media/self-improvement.13335f58e318854641f1b64cc3eef607.svg",
-    "static/media/education.svg": "/static/media/education.3de5d2d886f7025be96ed25eaa1a6fc0.svg",
-    "static/media/other.svg": "/static/media/other.d27dcef7dda1f2a937c7f6a2d52a0d23.svg",
+    "static/media/badge-dollar-sign.svg": "/static/media/badge-dollar-sign.4f0b82ff301f920e226d066c11e57482.svg",
     "static/media/search-icon.svg": "/static/media/search-icon.63d1fe3049bf722e869b4d9353c206c9.svg",
+    "static/media/archive-icon-white.svg": "/static/media/archive-icon-white.ad00c8a648391c13bd4b7df285190ba3.svg",
+    "static/media/account.svg": "/static/media/account.482d7cf838690b7138bb9f4d10cef449.svg",
     "index.html": "/index.html",
     "static/media/close-circle-white.svg": "/static/media/close-circle-white.8c58182156da84b55f2d09570a9ac2cc.svg",
-    "main.023d4ba4.css.map": "/static/css/main.023d4ba4.css.map",
-    "main.6f711cce.js.map": "/static/js/main.6f711cce.js.map",
+    "main.5cf88970.css.map": "/static/css/main.5cf88970.css.map",
+    "main.6e1ea2d2.js.map": "/static/js/main.6e1ea2d2.js.map",
     "787.94c48ac3.chunk.js.map": "/static/js/787.94c48ac3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.023d4ba4.css",
-    "static/js/main.6f711cce.js"
+    "static/css/main.5cf88970.css",
+    "static/js/main.6e1ea2d2.js"
   ]
 }
