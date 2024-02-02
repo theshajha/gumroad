@@ -50,7 +50,7 @@ module Api
 
     def filter_products(scope)
       if params[:keyword].present?
-        scope = scope.joins(:category).where("products.name LIKE :keyword OR products.creator_name LIKE :keyword OR category.name LIKE :keyword OR category.description LIKE :keyword", keyword: "%#{params[:keyword]}%")
+        scope = scope.joins(:category).where("products.name LIKE :keyword OR products.creator_name LIKE :keyword OR categories.name LIKE :keyword OR categories.description LIKE :keyword", keyword: "%#{params[:keyword]}%")
       end
       scope = scope.where(category_id: params[:category_id]) if params[:category_id].present?
       scope

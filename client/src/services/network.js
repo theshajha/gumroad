@@ -26,7 +26,6 @@ const getInstance = async () => {
  */
 const createInstance = async () => {
     instance = axios.create({
-        baseURL,
         timeout: REQUEST_TIMEOUT,
     })
 
