@@ -13,7 +13,7 @@ const SmallCategoryCard: React.FC<SmallCategoryCardPropTypes> = ({
                                                                  }) => {
     const { name, description, id, slug, full_icon_url } = category
     return (
-        <div className="relative w-fit">
+        <div className="relative w-max">
             <div className="absolute z-0 bottom-0 right-0 top-0 left-0 bg-white rounded"></div>
             <div className="flex cursor-pointer flex-col pt-[1.125rem] pb-6 px-9 w-full  max-w-[500px] rounded border border-[#646464] bg-black overflow-hidden shadow-lg transition-transform transform hover:-translate-x-1 hover:-translate-y-1">
                 <div className="flex flex-row items-start content-start gap-3">
