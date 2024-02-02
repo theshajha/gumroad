@@ -48,7 +48,7 @@ const SearchComponent: FC<SearchComponentPropTypes> = ({
     const handleSearch = useDebounce(() => {
         getCategoryList({ keyword: searchInput })
         getProductList({ keyword: searchInput, per_page: 5 })
-    }, 500)
+    }, 300)
 
     useEffect(() => {
         const handleKeyPress = (event: any) => {
@@ -100,7 +100,7 @@ const SearchComponent: FC<SearchComponentPropTypes> = ({
                                         {categoryList?.map((category) => (
                                             <div
                                                 key={category.id}
-                                                className="w-full"
+                                                className="flex"
                                             >
                                                 <CategoryCard
                                                     category={category}
