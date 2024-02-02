@@ -161,7 +161,7 @@ const ListingSection = (props: ListingSectionpropTypes) => {
                                 {categoryList?.map((category) => (
                                     <div
                                         key={category.id}
-                                        className="flex-shrink-0 flex-1"
+                                        className="flex-1 w-full"
                                     >
                                         <CategoryCard category={category} />
                                     </div>
