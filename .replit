@@ -1,4 +1,4 @@
-run = "chmod +x start.sh && ./start.sh"
+run = "chmod +x build.sh && ./build.sh && chmod +x start.sh && ./start.sh"
 hidden = [".bundle"]
 entrypoint = "main.rb"
 
@@ -29,3 +29,4 @@ start = "solargraph stdio"
 [deployment]
 deploymentTarget = "cloudrun"
 run = ["sh", "-c", "chmod +x start.sh && ./start.sh"]
+build = ["sh", "-c", "chmod +x build.sh && ./build.sh"]

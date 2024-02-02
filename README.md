@@ -2,26 +2,21 @@
 
 This project is a reimagined version of the Gumroad Discover page, focusing on enhancing user experience and discoverability of content. The redesign addresses existing issues and introduces new features to improve content visibility and user engagement.
 
+## Accessing the project
+- Codebase is available at - [Github Repo](https://github.com/theshajha/gumroad)
+- App is deployed on - [Deployed App](https://gumroad.replit.app)
+- Figma prototype link - [Figma Prototype](https://www.figma.com/proto/QzWPLXCR22BIl1QbUwuBO6/Gumroad-Discover?page-id=0%3A1&type=design&node-id=0-3&viewport=1235%2C604%2C0.39&t=odHZJLvMCeU6NJQH-1&scaling=scale-down-width&starting-point-node-id=0%3A3&mode=design)
+
 ## Table of Contents
-- [Project Overview](#project-overview)
 - [Technical Architecture](#technical-architecture)
-- [Features](#features)
 - [Installation and Setup](#installation-and-setup)
-
-## Project Overview
-
-### Background
-Briefly describe the original Gumroad Discover page and the motivation behind this project.
-
-### Objectives
-List the key objectives of this redesign, such as enhancing user experience, improving SEO, and promoting creator content.
 
 ## Technical Architecture
 
 ### Technologies Used
 - **Rails**: Backend API and server-side rendering.
 - **React**: Frontend development for a dynamic and responsive user interface.
-- **Other Libraries/Frameworks**: List any significant libraries or frameworks used in the project.
+- **Other Libraries/Frameworks**: Tailwind
 
 ### Directory Structure
 Provide an overview of your project's directory structure, explaining the organization of key components.
@@ -29,6 +24,9 @@ Provide an overview of your project's directory structure, explaining the organi
 gumroad_redesign/
 ├── app/
 │   ├── controllers/
+│   │   ├── api/
+│   │   │   ├── products_controller.rb
+│   │   │   └── categories_controller.rb
 │   │   ├── products_controller.rb
 │   │   └── categories_controller.rb
 │   ├── models/
@@ -51,6 +49,7 @@ gumroad_redesign/
 ├── db/
 │   ├── migrate/
 │   └── schema.rb
+|   └── seeds.rb
 ├── config/
 ├── lib/
 ├── public/
@@ -59,61 +58,45 @@ gumroad_redesign/
 ```
 
 ### Key Architectural Decisions
-Discuss any major architectural decisions made during development, such as:
-- Data modeling and API design.
-- React component structure.
-- State management approach.
-- Any specific patterns or practices adopted.
 
-## Features
+- Decided to build a dummy product and category model using sqlite
+- Seed data to the tables, and host the endpoints via `/api`
+- Seed data to the tables, and host the endpoints via `/api`
+- Single shell script to check and run necessary actions
+- Pagination, caching and dynamic querying of data
+- Build and serve react via the `public` folder instead of running on two ports
+- Atomic design approach for UI components
 
-### Existing Flaws Addressed
-Detail how you addressed each identified flaw of the original Discover page.
+### Product Changes
+- Moved the Category menu to left panel for better visibility
+- Made search result modal more prominent for data visualisation
+- Added Start Selling button in top Nav for quick access - this can change to Go to Dashboard if the user is logged in
 
-### New Feature Additions
-Explain the new features added, their purpose, and how they contribute to the project's objectives.
+### What more could be done
+- Mobile responsiveness
+- Data abtraction and how it gets accessed by the react app can be optimised further
+- Search implementation is pretty basic to showcase UI possibility
 
-## Installation and Setup
+## Installation, Setup and Running this project
 
-Provide step-by-step instructions on how to install and set up the project locally. Include any prerequisites, such as Node.js or Ruby versions.
+Instructions to install and set up the project locally. Assumes you have Ruby ~> 3.3.0 installed on your system
 
 ```bash
 # Clone the repository
-git clone [repository-url]
+git clone https://github.com/theshajha/gumroad
 
 # Navigate to the project directory
-cd [project-name]
+cd gumroad
 
-# Install dependencies
-...
+# Build the project
+chmod +x build.sh && ./build.sh
 
-# Setup the database
-...
+# Running via shell script
+chmod +x start.sh && ./start.sh
 
-# Start the server
-...
+# Using Foreman
+Foreman start
 ```
-
-## Running this project
-
-First, fork/download this project so you get your own copy of it. Once you have done that, you can clone your new repo to your machine, and get started.
-
-You need **TWO** terminals for this.
-
-In one terminal, run `bundle` to install the dependencies. Run `bin/rake db:setup` to create the databases (called rails_project_development by default). Run `bin/rails s` to run the server.
-
-In the other terminal, `cd` into `client`. Run `npm install`. Rename the `.env.example` file to be called `.env`. Then run `npm start` and go to `localhost:3000` in your browser.
-
-In the browser, you can click on the button and see the data get loaded.
-
-
-### Additional Notes:
-
-- **Personalize the Content**: Replace placeholders (like `[repository-url]`, `[project-name]`) with actual details of your project.
-- **Elaborate on Each Section**: Provide in-depth explanations where needed, especially in areas like "Key Architectural Decisions" and "Features".
-- **Reflect Your Work**: Ensure that the README accurately reflects your work and thought process.
-- **Continuous Update**: Keep updating the README as your project evolves.
-
 
 ## Contact
 

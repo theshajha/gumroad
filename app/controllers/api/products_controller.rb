@@ -2,8 +2,10 @@ module Api
   class ProductsController < ApplicationController
     # GET /api/products
     def index
-      products = filter_products(Product.all)
-      paginated_products = products.page(params[:page]).per(params[:per_page] || 10)
+      products = Rails.cache.fetch("products", expires_in: 1.hour) do
+        filter_products(Product.all).to_a
+      end
+      paginated_products = Kaminari.paginate_array(products).page(params[:page]).per(params[:per_page] || 4)
       render json: paginated_products, each_serializer: ProductSerializer
     rescue StandardError => e
       render_error(e)
@@ -22,7 +24,7 @@ module Api
       products = Product.includes(:category)
       products = products.where(category_id: params[:category_id]) if params[:category_id].present?
       recommended_products = products.order('ratings_average DESC, ratings_count DESC')
-      paginated_products = recommended_products.page(params[:page]).per(params[:per_page] || 10)
+      paginated_products = Kaminari.paginate_array(recommended_products).page(params[:page]).per(params[:per_page] || 4)
       render json: paginated_products, each_serializer: ProductSerializer
     rescue StandardError => e
       render json: { error: e.message }, status: :internal_server_error
@@ -30,17 +32,19 @@ module Api
 
     # GET /api/products/staff_picks
     def staff_picks
-      products = Product.staff_picks(params[:category]) # Implement this scope in your model
-      products = products.where(category_id: params[:category_id]) if params[:category_id].present?
-      staff_picked_products = products.order('')
-      paginated_products = staff_picked_products.page(params[:page]).per(params[:per_page] || 10)
-      render json: paginated_products, each_serializer: ProductSerializer
+      products = Rails.cache.fetch("products", expires_in: 1.hour) do
+          filter_products(Product.all).to_a
+        end
+        paginated_products = Kaminari.paginate_array(products).page(params[:page]).per(params[:per_page] || 4)
+        render json: paginated_products, each_serializer: ProductSerializer
+      rescue StandardError => e
+        render_error(e)
     end
 
     def products_in_category
       category = Category.find_by(slug: params[:slug]) || Category.find(params[:id])
       products = category.present? ? category.products : Product.none
-      paginated_products = products.page(params[:page]).per(params[:per_page] || 10)
+      paginated_products = Kaminari.paginate_array(products).page(params[:page]).per(params[:per_page] || 4)
       render json: paginated_products, each_serializer: ProductSerializer
     rescue ActiveRecord::RecordNotFound => e
       render_error(e, :not_found)

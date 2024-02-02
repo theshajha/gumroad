@@ -10,7 +10,7 @@ class CategorySerializer < ActiveModel::Serializer
 
   attribute :full_icon_url do
     # Rails' URI helpers to generate a full URL
-    Rails.application.routes.url_helpers.url_for(object.icon)
+    "https://14daee96-be81-4417-8bb0-66e796dd588f-00-2xqfzqyvqmeu9.picard.replit.dev/#{object.icon}"
   end
 
   # Include metadata, like counts
