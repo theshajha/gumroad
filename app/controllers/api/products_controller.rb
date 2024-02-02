@@ -19,15 +19,21 @@ module Api
 
     # GET /api/products/recommended
     def recommended
-      products = Product.recommended(params[:category]) # Implement this scope in your model
-      paginated_products = products.page(params[:page]).per(params[:per_page] || 10)
+      products = Product.includes(:category)
+      products = products.where(category_id: params[:category_id]) if params[:category_id].present?
+      recommended_products = products.order('ratings_average DESC, ratings_count DESC')
+      paginated_products = recommended_products.page(params[:page]).per(params[:per_page] || 10)
       render json: paginated_products, each_serializer: ProductSerializer
+    rescue StandardError => e
+      render json: { error: e.message }, status: :internal_server_error
     end
 
     # GET /api/products/staff_picks
     def staff_picks
       products = Product.staff_picks(params[:category]) # Implement this scope in your model
-      paginated_products = products.page(params[:page]).per(params[:per_page] || 10)
+      products = products.where(category_id: params[:category_id]) if params[:category_id].present?
+      staff_picked_products = products.order('')
+      paginated_products = staff_picked_products.page(params[:page]).per(params[:per_page] || 10)
       render json: paginated_products, each_serializer: ProductSerializer
     end
 
@@ -43,9 +49,9 @@ module Api
     private
 
     def filter_products(scope)
-      scope = scope.where('name LIKE ? OR creator_name LIKE ? OR categories.name LIKE ? OR categories.slug LIKE ?',
-                          "%#{params[:keyword]}%", "%#{params[:keyword]}%", "%#{params[:keyword]}%", "%#{params[:keyword]}%") if params[:keyword].present?
-      scope.joins(:category)
+      scope = scope.where("name LIKE :keyword OR creator_name LIKE :keyword OR categories.name LIKE :keyword OR categories.description LIKE :keyword", keyword: "%#{params[:keyword]}%") if params[:keyword].present?
+      scope = scope.where(category_id: params[:category_id]) if params[:category_id].present?
+      scope
     end
 
     def render_error(exception, status = :unprocessable_entity)

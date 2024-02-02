@@ -8,11 +8,9 @@ class Product < ApplicationRecord
     category ? where(category: category) : all
   }
 
-  scope :staff_picks, -> (category_slug) {
-    # Select products marked as staff picks
-    # Filter by category if provided
-    query = where(staff_pick: true)
-    category = Category.find_by(slug: category_slug)
-    category ? query.where(category: category) : query
+  scope :staff_picks, -> (category_id) {
+    # If a category is provided, filter by category
+    where(category_id: category_id)
+      .order('created_at DESC') # Example: prioritize newer products
   }
 end

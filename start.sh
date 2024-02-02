@@ -27,10 +27,10 @@ mv -f build/* ../public/
 cd ..
 
 echo "Checking and applying database migrations..."
-# bundle exec rake db:migrate
+ bundle exec rake db:migrate
 
 echo "Seeding the database..."
-# bundle exec rake db:seed
+ bundle exec rake db:seed
 
 # Start the Rails server
 echo "Starting Rails server..."

@@ -15,6 +15,7 @@
     "deploy": "cp -a client/build/. public/",
     "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
   },
-
-  "keywords": []
+  "keywords": [],
+  "author": "Shashank Jha",
+  "license": "ISC"
 }

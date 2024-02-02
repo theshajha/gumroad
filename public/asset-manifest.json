@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.b0806a28.css",
-    "main.js": "/static/js/main.a7952620.js",
+    "main.css": "/static/css/main.023d4ba4.css",
+    "main.js": "/static/js/main.6f711cce.js",
     "static/js/787.94c48ac3.chunk.js": "/static/js/787.94c48ac3.chunk.js",
     "static/media/films.svg": "/static/media/films.b1233467ef53c8bf8041d48685b1e920.svg",
     "static/media/3d.svg": "/static/media/3d.004e5e5f6951c0b00d71afb4308641f1.svg",
@@ -21,13 +21,15 @@
     "static/media/self-improvement.svg": "/static/media/self-improvement.13335f58e318854641f1b64cc3eef607.svg",
     "static/media/education.svg": "/static/media/education.3de5d2d886f7025be96ed25eaa1a6fc0.svg",
     "static/media/other.svg": "/static/media/other.d27dcef7dda1f2a937c7f6a2d52a0d23.svg",
+    "static/media/search-icon.svg": "/static/media/search-icon.63d1fe3049bf722e869b4d9353c206c9.svg",
     "index.html": "/index.html",
-    "main.b0806a28.css.map": "/static/css/main.b0806a28.css.map",
-    "main.a7952620.js.map": "/static/js/main.a7952620.js.map",
+    "static/media/close-circle-white.svg": "/static/media/close-circle-white.8c58182156da84b55f2d09570a9ac2cc.svg",
+    "main.023d4ba4.css.map": "/static/css/main.023d4ba4.css.map",
+    "main.6f711cce.js.map": "/static/js/main.6f711cce.js.map",
     "787.94c48ac3.chunk.js.map": "/static/js/787.94c48ac3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b0806a28.css",
-    "static/js/main.a7952620.js"
+    "static/css/main.023d4ba4.css",
+    "static/js/main.6f711cce.js"
   ]
 }

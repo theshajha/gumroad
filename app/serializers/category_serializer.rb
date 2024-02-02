@@ -8,13 +8,12 @@ class CategorySerializer < ActiveModel::Serializer
     CGI.unescapeHTML(object.name)
   end
 
-  # Custom method for complex attributes, like a full icon URL
   attribute :full_icon_url do
-    # Assuming you have a method to get the full URL of an icon
-    object.icon
+    # Rails' URI helpers to generate a full URL
+    Rails.application.routes.url_helpers.url_for(object.icon)
   end
 
-  # Include metadata, like counts, if necessary
+  # Include metadata, like counts
   attribute :products_count do
     object.products.count
   end
