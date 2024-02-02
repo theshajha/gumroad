@@ -14,7 +14,7 @@ const ListingCard = (props: { product: ProductTypes }) => {
         ratings_average,
     } = product
     return (
-        <div className="relative">
+        <div className="relative max-w-[500px]">
             <div className="absolute z-0 bottom-0 right-0 top-0 left-0 bg-white rounded"></div>
 
             <div className="flex cursor-pointer flex-col justify-center items-center p-px border rounded border-[#646464] bg-black overflow-hidden shadow-lg transition-transform transform hover:-translate-x-1 hover:-translate-y-1">

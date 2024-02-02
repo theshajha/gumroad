@@ -79,7 +79,7 @@ const SearchComponent: FC<SearchComponentPropTypes> = ({
                 <img
                     src={CloseIcon}
                     alt="x"
-                    className="absolute top-4 right-8 cursor-pointer text-white"
+                    className="absolute top-6 right-8 cursor-pointer text-white"
                     onClick={() => onClose()}
                 />
                 {isDataLoading ? (
@@ -89,16 +89,23 @@ const SearchComponent: FC<SearchComponentPropTypes> = ({
                         </div>
                     </div>
                 ) : (
-                    <div className="flex justify-between  items-start self-stretch pl-[3.75rem] pr-[3.75rem] p-0">
+                    <div className="flex justify-between  items-start self-stretch px-4  sm:px-16 p-0">
                         <div className="flex flex-col items-start">
                             {categoryList && categoryList?.length > 0 && (
                                 <div className="flex flex-col justify-center items-start gap-6 self-stretch py-6 px-2">
                                     <div className="text-white font-[mabry pro] text-2xl leading-[normal]">
                                         Categories
                                     </div>
-                                    <div className="flex flex-wrap items-start gap-6 self-stretch overflow-auto">
+                                    <div className="flex w-full flex-wrap items-start gap-6 self-stretch overflow-auto">
                                         {categoryList?.map((category) => (
-                                            <CategoryCard category={category} />
+                                            <div
+                                                key={category.id}
+                                                className="w-full"
+                                            >
+                                                <CategoryCard
+                                                    category={category}
+                                                />
+                                            </div>
                                         ))}
                                     </div>
                                 </div>
@@ -108,9 +115,16 @@ const SearchComponent: FC<SearchComponentPropTypes> = ({
                                     <div className="text-white font-[mabry pro] text-2xl leading-[normal]">
                                         Products
                                     </div>
-                                    <div className="flex flex-wrap items-start gap-6">
+                                    <div className="flex w-full flex-wrap items-start gap-6">
                                         {productList?.map((product) => (
-                                            <ListingCard product={product} />
+                                            <div
+                                                key={product.id}
+                                                className="flex-1 "
+                                            >
+                                                <ListingCard
+                                                    product={product}
+                                                />
+                                            </div>
                                         ))}
                                     </div>
                                 </div>

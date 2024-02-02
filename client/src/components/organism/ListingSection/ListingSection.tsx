@@ -69,7 +69,7 @@ const ListingSection = (props: ListingSectionpropTypes) => {
         }
     )
     const { products, recommendedProducts, staffPickedProducts } =
-        categoryMappedProductList[selectedOption?.id || 0] || {}
+    categoryMappedProductList[selectedOption?.id || 0] || {}
     useEffect(() => {
         if (selectedOption?.id !== undefined && selectedOption?.id !== null) {
             setFirstLoad(true)
@@ -101,7 +101,7 @@ const ListingSection = (props: ListingSectionpropTypes) => {
     ].some((loading) => loading)
 
     return (
-        <div className="flex flex-col justify-center relative items-start gap-6 py-6 px-2">
+        <div className="flex w-full flex-col justify-center relative items-start gap-6 py-6 px-2">
             {isProductLoading ? (
                 <div className="w-full h-[calc(100vh-195px)]">
                     <div className="w-full h-full flex items-center justify-center self-center">
@@ -115,9 +115,9 @@ const ListingSection = (props: ListingSectionpropTypes) => {
                             <div className="text-white font-[mabry Pro] text-2xl leading-[normal]">
                                 Recommended for you
                             </div>
-                            <div className="flex flex-wrap items-start gap-6">
+                            <div className="flex flex-1 flex-wrap items-start gap-6">
                                 {recommendedProducts?.map((product) => (
-                                    <div key={product.id}>
+                                    <div key={product.id} className="flex-1">
                                         <ListingCard product={product} />
                                     </div>
                                 ))}
@@ -129,9 +129,9 @@ const ListingSection = (props: ListingSectionpropTypes) => {
                             <div className="text-white font-[mabry Pro] text-2xl leading-[normal]">
                                 Staff picked (curated every week)
                             </div>
-                            <div className="flex flex-wrap items-start gap-6">
+                            <div className="flex w-full  flex-wrap items-start gap-6">
                                 {staffPickedProducts?.map((product) => (
-                                    <div key={product.id}>
+                                    <div key={product.id} className="flex-1">
                                         <ListingCard product={product} />
                                     </div>
                                 ))}
@@ -143,9 +143,9 @@ const ListingSection = (props: ListingSectionpropTypes) => {
                             <div className="text-white font-[mabry Pro] text-2xl leading-[normal]">
                                 Most sold this week
                             </div>
-                            <div className="flex flex-wrap items-start gap-6 ">
+                            <div className="flex w-full flex-wrap items-start gap-6 ">
                                 {products?.map((product) => (
-                                    <div key={product.id}>
+                                    <div key={product.id} className="flex-1">
                                         <ListingCard product={product} />
                                     </div>
                                 ))}
@@ -161,7 +161,7 @@ const ListingSection = (props: ListingSectionpropTypes) => {
                                 {categoryList?.map((category) => (
                                     <div
                                         key={category.id}
-                                        className="flex-shrink-0"
+                                        className="flex-shrink-0 flex-1"
                                     >
                                         <CategoryCard category={category} />
                                     </div>

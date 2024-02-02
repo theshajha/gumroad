@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import SearchIcon from '../../../assets/icons/search-icon.svg'
 import SearchComponent from '../../molecule/SearchComponent'
+import HamburgerMenu from '../HamburgerMenu'
 
 const Header = () => {
     const [isSearchOpen, setIsSearchOpen] = useState(false)
@@ -17,10 +18,10 @@ const Header = () => {
     }
 
     return (
-        <div className="flex justify-between items-center self-stretch py-8 px-20 gap-8 border-b border-b-[#000] bg-[#242423]">
-            <div className="flex items-center gap-10 w-[100%]">
+        <div className="flex justify-between items-center self-stretch py-8 px-4 sm:px-8 lg:px-20 gap-4 sm:gap-8 border-b border-b-[#000] bg-[#242423]">
+            <div className="flex items-center ml-14 sm:ml-0 gap-4 sm:gap-10 w-[100%]">
                 <div
-                    className="Pro text-white font-[Mabry Pro] text-4xl cursor-pointer font-black leading-[normal]"
+                    className=" hidden sm:block text-white font-[Mabry Pro]  sm:text-2xl md:text-3xl lg:text-4xl cursor-pointer font-black leading-[normal]"
                     onClick={() => isSearchOpen && setIsSearchOpen(false)}
                 >
                     gumroad
@@ -40,8 +41,8 @@ const Header = () => {
                     <div></div>
                 </div>
             </div>
-            <div className="flex items-center gap-2 py-3 px-4 rounded bg-[#ff90e7]">
-                <div className="Pro text-[#292929] font-[Mabry Pro] whitespace-nowrap leading-[normal]">
+            <div className=" hidden sm:flex items-center gap-2 py-3 px-4 rounded bg-[#ff90e7]">
+                <div className="Pro  text-[#292929] font-[Mabry Pro] whitespace-nowrap leading-[normal]">
                     Start Selling
                 </div>
                 <svg

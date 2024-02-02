@@ -3,7 +3,6 @@ import Header from '../../components/atom/Header'
 import SideNav from '../../components/atom/SideNav'
 import NavOptions from '../../constants/NavOptions'
 import ListingSection from '../../components/organism/ListingSection'
-import Footer from '../../components/atom/Footer'
 import UseApiCall from '../../hooks/useApiCall'
 import { apiGetCategories } from '../../services/services'
 import { useRecoilState } from 'recoil'
@@ -53,14 +52,12 @@ const HomePage: React.FC = () => {
         <div className="App bg-[#242423] min-h-screen relative">
             <Header />
             <div className="grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-                <div className="bg-[#242423] border-r h-[calc(100vh-115px)] border-r-[#000] p-4 shadow-md overflow-auto">
-                    <SideNav
-                        selectedOption={selectedOption}
-                        setSelectedOption={setSelectedOption}
-                        loadingCategory={loadingCategory}
-                    />
-                </div>
-                <div className="bg-[#242423] h-[calc(100vh-115px)] p-4 col-span-2 lg:col-span-3 xl:col-span-4 shadow-md overflow-auto">
+                <SideNav
+                    selectedOption={selectedOption}
+                    setSelectedOption={setSelectedOption}
+                    loadingCategory={loadingCategory}
+                />
+                <div className="bg-[#242423] flex-1 h-[calc(100vh-115px)] p-2 sm:p-4 col-span-3 sm:col-span-2 lg:col-span-3 xl:col-span-4 shadow-md overflow-auto">
                     <ListingSection selectedOption={selectedOption} />
                 </div>
             </div>
