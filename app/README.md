@@ -8,12 +8,16 @@ The `app/` directory contains the core application code for the Gumroad Discover
 app/
 ├── controllers/
 │   ├── application_controller.rb
-│   ├── products_controller.rb
-│   └── categories_controller.rb
+│   ├── api/
+│   │   ├── products_controller.rb
+│   │   └── categories_controller.rb
 ├── models/
 │   ├── application_record.rb
 │   ├── product.rb
 │   └── category.rb
+├── serializers/
+│   │   ├── products_serializer.rb
+│   │   └── categories_serializer.rb
 ├── views/
 │   ├── layouts/
 │   ├── products/
@@ -35,10 +39,10 @@ app/
 ### `application_controller.rb`
 Serves as the base controller from which all other controllers inherit. It includes common functionality across the application.
 
-### `products_controller.rb`
+### `api/products_controller.rb`
 Handles product-related requests and actions, such as listing products, showing a single product, and searching products.
 
-### `categories_controller.rb`
+### `api/categories_controller.rb`
 Manages category-related actions, including listing all categories and showing products within a selected category.
 
 ## Models
@@ -52,6 +56,7 @@ Represents the products with attributes and associations. It includes validation
 Represents categories, potentially including a hierarchical relationship for sub-categories, along with necessary validations and business logic.
 
 ## Views
+Not used.
 ### layouts/
 Contains the template files for global application layouts.
 
@@ -93,6 +98,6 @@ Houses any ActionCable channel files for real-time features in the application.
 5. Jobs handle tasks that should be run asynchronously outside of the web request-response cycle.
 6. Helpers provide utility functions to assist with view rendering.
 7. Mailers are used for sending emails.
-8. Channels are used for real-time communication with the client.
+8. ~~Channels are used for real-time communication with the client.~~
 
 For further details on each component, refer to the corresponding files and their inline documentation.

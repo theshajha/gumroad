@@ -19,7 +19,10 @@ const Header = () => {
     return (
         <div className="flex justify-between items-center self-stretch py-8 px-20 gap-8 border-b border-b-[#000] bg-[#242423]">
             <div className="flex items-center gap-10 w-[100%]">
-                <div className="Pro text-white font-[Mabry Pro] text-4xl font-black leading-[normal]">
+                <div
+                    className="Pro text-white font-[Mabry Pro] text-4xl cursor-pointer font-black leading-[normal]"
+                    onClick={() => isSearchOpen && setIsSearchOpen(false)}
+                >
                     gumroad
                 </div>
                 <div className="flex relative items-center justify-between gap-2 py-3 px-4 min-w-[60%] w-[100%] rounded border border-[#dddddd]/[.40] group focus-within:border-[#FF90E7] bg-black">

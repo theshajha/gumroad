@@ -9,7 +9,7 @@ const baseUrl = {
   api:
     process.env.REACT_APP_NODE_ENV === 'production'
       ? 'https://gumroad.replit.app/'
-      : 'https://14daee96-be81-4417-8bb0-66e796dd588f-00-2xqfzqyvqmeu9.picard.replit.dev/',
+      : 'https://gumroad.replit.app/',
 };
 
 const COMMON_HEADERS = {

@@ -7,10 +7,6 @@ This project is a reimagined version of the Gumroad Discover page, focusing on e
 - App is deployed on - [Deployed App](https://gumroad.replit.app)
 - Figma prototype link - [Figma Prototype](https://www.figma.com/proto/QzWPLXCR22BIl1QbUwuBO6/Gumroad-Discover?page-id=0%3A1&type=design&node-id=0-3&viewport=1235%2C604%2C0.39&t=odHZJLvMCeU6NJQH-1&scaling=scale-down-width&starting-point-node-id=0%3A3&mode=design)
 
-## Table of Contents
-- [Technical Architecture](#technical-architecture)
-- [Installation and Setup](#installation-and-setup)
-
 ## Technical Architecture
 
 ### Technologies Used
@@ -24,14 +20,16 @@ Provide an overview of your project's directory structure, explaining the organi
 gumroad_redesign/
 ├── app/
 │   ├── controllers/
+│   ├── application_controller.rb
 │   │   ├── api/
 │   │   │   ├── products_controller.rb
 │   │   │   └── categories_controller.rb
-│   │   ├── products_controller.rb
-│   │   └── categories_controller.rb
 │   ├── models/
 │   │   ├── product.rb
 │   │   └── category.rb
+├── ├── serializers/
+│   │   ├── products_serializer.rb
+│   │   └── categories_serializer.rb
 │   ├── views/
 │   │   ├── products/
 │   │   └── categories/
@@ -41,15 +39,27 @@ gumroad_redesign/
 │       └── gumroad_api_sync_job.rb
 ├── client/ # Using React within Rails, managed by webpacker
 │   ├── src/
+│   │   ├── assets/
 │   │   ├── components/
+│   │   │   ├── atoms/
+│   │   │   ├── molecule/
+│   │   │   ├── organism/
+│   │   ├── constants/
+│   │   ├── hooks/
+│   │   ├── Pages/
+│   │   ├── recoil/
+│   │   ├── router/
 │   │   ├── services/
-│   │   ├── App.js
-│   │   └── index.js
+│   │   ├── styles/
+│   │   ├── App.tsx
+│   │   └── index.tsx
+│   │   └── index.css
 │   └── package.json
 ├── db/
 │   ├── migrate/
 │   └── schema.rb
 |   └── seeds.rb
+├── public/
 ├── config/
 ├── lib/
 ├── public/

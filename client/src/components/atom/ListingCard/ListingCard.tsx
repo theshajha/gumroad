@@ -5,19 +5,13 @@ import { ProductTypes } from '../../../recoil/apiRecoilState.types'
 const ListingCard = (props: { product: ProductTypes }) => {
     const { product } = props
     const {
-        id,
         name,
-        permalink,
         price,
         thumbnail_url,
         creator_name,
         creator_profile_url,
         ratings_count,
         ratings_average,
-        currency_code,
-        is_pay_what_you_want,
-        category_id,
-        formatted_price,
     } = product
     return (
         <div className="relative">
@@ -30,7 +24,7 @@ const ListingCard = (props: { product: ProductTypes }) => {
                 />
                 <div className="flex flex-col justify-center items-center gap-6 self-stretch py-4 px-2 border-t border-t-[#4d4d4d] ">
                     <div className="self-stretch text-white text-base text-left font-[mabry pro] leading-[normal]">
-                        Run your life on autopilot
+                        {name}
                     </div>
                     <div className="flex flex-col justify-center items-center gap-3 self-stretch">
                         <div className="flex items-center gap-2.5 self-stretch">
@@ -60,7 +54,7 @@ const ListingCard = (props: { product: ProductTypes }) => {
                                 />
                             </svg>
                             <div className="text-white font-[mabry pro] text-sm hover:leading-[normal]">
-                                4.9 (358)
+                                {ratings_average} ({ratings_count})
                             </div>
                         </div>
                     </div>
